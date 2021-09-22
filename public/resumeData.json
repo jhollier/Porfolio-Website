@@ -1,0 +1,137 @@
+{
+  "main": {
+    "name": "Joe Hollier",
+    "description": "This is my React software portfolio where I not only show you some of the projects I've create but also some things I am interested in.",
+    "image": "profilepic.jpg",
+    "bio": "After several years of physically building anything from racecars to rocket engines, I became obsessed with building using software technologies – I have the global pandemic lockdown to thank for this. I enjoyed building personal software projects so much that I pivoted my career towards using those same technologies to adress deviciencies at my current job.",
+    "contactmessage": "Here is where you should write your message to readers to have them get in contact with you.",
+    "email": "jbhollier20@gmail.com",
+    "phone": "318-787-8785",
+    "address": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "website": "http://www.timbakerdev.com",
+    "resumedownload": "http://timbakerdev.com",
+    "social": [
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/josephhollier/",
+        "className": "fa fa-linkedin"
+      },
+      {
+        "name": "github",
+        "url": "https://github.com/jhollier",
+        "className": "fa fa-github"
+      }
+    ]
+  },
+  "resume": {
+    "education": [
+      {
+        "school": "Louisiana State University",
+        "degree": "Bachelors in Mechanical Engineer",
+        "graduated": "2010-2015",
+        "description": "3.8 GPA"
+      },
+      {
+        "school": "LSU FormulaSAE TigerRacing",
+        "degree": "Designer and Team Captain",
+        "graduated": "2012-2015",
+        "description": "I was part of a small group of students who founded an auto racing engineering club to compete on a global scale. We designed, built, tested, and raced open-wheeled, formula style race cars. Check the team's webiste out ",
+        "website": "https://www.formulalsu.com/",
+        "websitetext": "here!"
+      }
+    ],
+    "work": [
+      {
+        "company": "Blue Origin",
+        "title": "Software Development Engineer",
+        "years": "July 2021 - Present",
+        "description": "Scripted a post test data pipline using Python, Pandas, and NumPy to store reduced trending data. Developed a React front end for easily viewing and exporting this trended data.",
+        "title2": "Propulsion Development Engineer",
+        "years2": "Sept 2017 - Present",
+        "description2": "I've been a developer for Blue's family of liquid oxygen / liquid hydrogen rocket engines. This includes full life-cycle deisgn of structural hardware, overall engine and test article layouts, material property development, and configuration managment."
+      },
+      {
+        "company": "Raytheon: Integrated Defense Systems",
+        "title": "Mechanical Engineer",
+        "years": "May 2017 - August 2017",
+        "description": "Provided mechanical development support for design updates the Patriot Missile Defense System."
+      },
+      {
+        "company": "Textron Systems",
+        "title": "Mechanical Engineer",
+        "years": "June 2015 - May 2017",
+        "description": "Developed mechanical systems for the area denial Supervised Smart Munition DoD initiative."
+      }
+    ],
+    "skillmessage": "Notable software technology skills.",
+    "skills": [
+      {
+        "name": "Python"
+      },
+      {
+        "name": "Pandas / NumPy / Matplotlib"
+      },
+      {
+        "name": "HTML / CSS"
+      },
+      {
+        "name": "Django"
+      },
+      {
+        "name": "JavaScript"
+      },
+      {
+        "name": "ReactJs"
+      },
+      {
+        "name": "Gitlab / Github"
+      },
+      {
+        "name": "AWS SES"
+      }
+    ]
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "MathPrepPro",
+        "category": "A deployed webapp for teaching highschool math through daily emails.",
+        "image": "MPP.png",
+        "url": "/mathpreppro"
+      },
+      {
+        "title": "Ikon Reservation Tool",
+        "category": "A tool for automating ski day reservations during COVID.",
+        "image": "ikon.jpg",
+        "url": "/ikon"
+      },
+      {
+        "title": "Formula 1 Exploration",
+        "category": "An exploratory data science project to answer to interesting questions regarding Formula 1 racing data.",
+        "image": "f1.png",
+        "url": "/formula1"
+      },
+      {
+        "title": "ISS Viewing Angles",
+        "category": "A cool tool that will give you current viewing angles to the ISS at your current location.",
+        "image": "ISS.jpg",
+        "url": "/ISS"
+      }
+    ]
+  },
+  "testimonials": {
+    "testimonials": [
+      {
+        "text": "",
+        "user": ""
+      },
+      {
+        "text": "",
+        "user": ""
+      }
+    ]
+  }
+}
