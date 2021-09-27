@@ -8,20 +8,20 @@ import { isClassExpression } from '@babel/types';
 
 const useStyles = makeStyles(theme => ({
     main_paper: {
-        marginTop: '100px',
-        marginLeft: '250px',
-        marginRight: '250px',
-        marginBottom: '100px',
-        padding: '50px',
+        marginTop: '5%',
+        marginLeft: '10%',
+        marginRight: '10%',
+        marginBottom: '5%',
+        padding: '4%',
     },
     background: {
         // position: 'fixed',
-        height: '800px',
-        minHeight: '500px',
-        width: '100%',
-        backgroundImage: `url(../images/header-background.jpg)`,
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
+        // height: '800px',
+        // minHeight: '500px',
+        // width: '100%',
+        // backgroundImage: `url(../images/header-background.jpg)`,
+        // backgroundRepeat: 'no-repeat',
+        // backgroundPosition: 'center',
         // background: '#161415 url(../images/header-background.jpg) no-repeat top center',
     },
     nav_wrap: {
