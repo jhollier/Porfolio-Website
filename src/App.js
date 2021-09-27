@@ -6,12 +6,11 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import About from './Components/About';
 import Resume from './Components/Resume';
-import Contact from './Components/Contact';
-// import Testimonials from './Components/Testimonials';
 import Portfolio from './Components/Portfolio';
 import Mathpreppro from './Components/Mathpreppro';
 import Ikon from './Components/Ikon';
 import Formula1 from './Components/Formula1';
+import Scroll from './Components/Scroll';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -22,10 +21,6 @@ class App extends Component {
       foo: 'bar',
       resumeData: {}
     };
-
-    // Google Analytics
-    // ReactGA.initialize('UA-110570651-1');
-    // ReactGA.pageview(window.location.pathname);
 
   }
 
@@ -51,28 +46,29 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Switch>
-            <Route exact path='/'>
-              <div className="App">
-                <Header data={this.state.resumeData.main}/>
-                <About data={this.state.resumeData.main}/>
-                <Resume data={this.state.resumeData.resume}/>
-                <Portfolio data={this.state.resumeData.portfolio}/>
-                {/* <Testimonials data={this.state.resumeData.testimonials}/> */}
-                <Contact data={this.state.resumeData.main}/>
-                <Footer data={this.state.resumeData.main}/>
-              </div>
-            </Route>
-            <Route path='/mathpreppro' >
-              <Mathpreppro />
-            </Route>
-            <Route path='/ikon' >
-              <Ikon />
-            </Route>
-            <Route path='/formula1' >
-              <Formula1 />
-            </Route>
-        </Switch>
+        {/* <ScrollToTop> */}
+        <Scroll />
+          <Switch>
+              <Route exact path='/'>
+                <div className="App">
+                  <Header data={this.state.resumeData.main}/>
+                  <About data={this.state.resumeData.main}/>
+                  <Resume data={this.state.resumeData.resume}/>
+                  <Portfolio data={this.state.resumeData.portfolio}/>
+                  <Footer data={this.state.resumeData.main}/>
+                </div>
+              </Route>
+              <Route path='/mathpreppro' >
+                <Mathpreppro />
+              </Route>
+              <Route path='/ikon' >
+                <Ikon />
+              </Route>
+              <Route path='/formula1' >
+                <Formula1 />
+              </Route>
+          </Switch>
+        {/* </ScrollToTop> */}
       </Router>
     );
   }

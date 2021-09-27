@@ -8,21 +8,14 @@ import { isClassExpression } from '@babel/types';
 
 const useStyles = makeStyles(theme => ({
     main_paper: {
-        marginTop: '5%',
+        marginTop: '7%',
         marginLeft: '10%',
         marginRight: '10%',
         marginBottom: '5%',
-        padding: '4%',
-    },
-    background: {
-        // position: 'fixed',
-        // height: '800px',
-        // minHeight: '500px',
-        // width: '100%',
-        // backgroundImage: `url(../images/header-background.jpg)`,
-        // backgroundRepeat: 'no-repeat',
-        // backgroundPosition: 'center',
-        // background: '#161415 url(../images/header-background.jpg) no-repeat top center',
+        paddingLeft: '15%',
+        paddingRight: '15%',
+        paddingTop: '5%',
+        paddingBottom: '5%'
     },
     nav_wrap: {
         fontSize: '12px',
@@ -55,8 +48,8 @@ const Mathpreppro = () => {
     COVID lockdown ensued, I took this as a good opportunity to begin to learning a software language. Python was the obvious choice
     given my current job. Nothing like replacing a frustrating commute
     with banging your head against a wall trying to learn SWE fundamentals - that is eactly what I did :) I didn't want to just take
-    a class. I wanted to actually have a project goal in mind that I could serisouly learn from, deploy with a custom domain, and
-    maybe even make a little side hustle cash from.`
+    a class. I wanted to treat this like a real business and have a concrete project goal that I could serisouly learn from, deploy
+    with a custom domain, and maybe even make a little side hustle cash from.`
 
     const para2 = `It is a highschool standardized math test preparation business built on a simple, transferable business model.
     A user can sign up to recieve a totally free daily curated (by yours truely) ACT / SAT math practice problem in their
@@ -99,6 +92,9 @@ const Mathpreppro = () => {
     have really paid off for me though as the foundation for bringing SWE into my career. Also, the foundation and business model is easily transferable to
     something else in the future.`
 
+    const para8 = `If you're still reading this, I hope you can appreciate the momumental effort it took to make this idea a reality with zero prior software
+    experience. I went from barely knowing what object oriented programing was to deloyment in a few months.`
+
     return (
         <>
             <div>
@@ -122,7 +118,7 @@ const Mathpreppro = () => {
                     <h2>Why MathPrepPro?</h2>
                     <p className={classes.para_text} >{para1}</p>
                     <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                        <img src="images/mathpreppro/pad.jpg" alt="Pic Missing..." width="80%" style={{margin: "auto"}}/>
+                        <img src="images/mathpreppro/pad.jpg" alt="Pic Missing..." width="100%" style={{margin: "auto"}}/>
                         {/* <figcaption style={{margin: "auto"}}>Simplified project workflow.</figcaption> */}
                     </figure>
                     <h2>So what the heck is MathPrepPro?</h2>
@@ -139,22 +135,25 @@ const Mathpreppro = () => {
                         <figcaption style={{margin: "auto"}}>SendinBlue contact lists.</figcaption>
                     </figure>
                     <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                        <img src="images/mathpreppro/cronjob.png" alt="Pic Missing..." width="50%" style={{margin: "auto"}}/>
+                        <img src="images/mathpreppro/cronjob.png" alt="Pic Missing..." width="80%" style={{margin: "auto"}}/>
                         <figcaption style={{margin: "auto"}}>What kind of a portfolio would this be if I didn't show some code? This job iterates a user's daily problem number.</figcaption>
                     </figure>
                     <p className={classes.para_text} >{para5}</p>
                     <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                        <img src="images/mathpreppro/email.gif" alt="Pic Missing..." width="60%" style={{margin: "auto"}}/>
+                        <img src="images/mathpreppro/email.gif" alt="Pic Missing..." width="85%" style={{margin: "auto"}}/>
                         <figcaption style={{margin: "auto"}}>Sample daily email for a pro user.</figcaption>
                     </figure>
                     <h2>Unique challenge I had to solve.</h2>
                     <p className={classes.para_text} >{para6}</p>
                     <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column", border: "10px"}}>
-                        <img src="images/mathpreppro/addproblem.png" alt="Pic Missing..." width="70%" style={{margin: "auto"}}/>
+                        <img src="images/mathpreppro/addproblem.png" alt="Pic Missing..." width="85%" style={{margin: "auto"}}/>
                         <figcaption style={{margin: "auto"}}>Problem addition admin interface.</figcaption>
                     </figure>
                     <h2>So is MathPrepPro up and running?</h2>
                     <p className={classes.para_text} >{para7}</p>
+                    <p className={classes.para_text} >{para8}</p>
+                    <h6 className={classes.para_text} >Cheers,</h6>
+                    <h6 className={classes.para_text} > -Your MathPrepPro</h6>
                 </Paper>
             <Footer />
         </>
