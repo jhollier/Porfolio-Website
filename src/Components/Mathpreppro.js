@@ -118,7 +118,7 @@ const Mathpreppro = () => {
                     <h2>Why MathPrepPro?</h2>
                     <p className={classes.para_text} >{para1}</p>
                     <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                        <img src="images/mathpreppro/pad.jpg" alt="Pic Missing..." width="100%" style={{margin: "auto"}}/>
+                        <img src="images/mathpreppro/pad.png" alt="Pic Missing..." width="100%" style={{margin: "auto"}}/>
                         {/* <figcaption style={{margin: "auto"}}>Simplified project workflow.</figcaption> */}
                     </figure>
                     <h2>So what the heck is MathPrepPro?</h2>
