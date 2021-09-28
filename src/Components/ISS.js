@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     }
   }));
 
-const Formula1 = () => {
+const ISS = () => {
 
     const classes = useStyles();
 
@@ -31,17 +31,17 @@ const Formula1 = () => {
                         <li><Link to='/'classname="smoothscroll" >Home</Link></li>
                         <li><Link to='/mathpreppro'classname="smoothscroll" >MathPrepPro</Link></li>
                         <li><Link to='/ikon'classname="smoothscroll" >Ikon</Link></li>
-                        <li className='current'><Link to='/formula1'classname="smoothscroll" >Formula1</Link></li>
-                        <li><Link to='/ISS'classname="smoothscroll" >ISS</Link></li>
+                        <li><Link to='/formula1'classname="smoothscroll" >Formula1</Link></li>
+                        <li className='current'><Link to='/ISS'classname="smoothscroll" >ISS</Link></li>
                     </ul>
                 </nav>
             </div>
             <Paper className={classes.main_paper} elevation={2}>
-                <h2>Formula 1 data science project coming soon!</h2>
+                <h2>ISS project coming soon!</h2>
             </Paper>
             <Footer />
         </>
     )
 }
 
-export default Formula1
+export default ISS

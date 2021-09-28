@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Footer from './Footer';
+import { CodeBlock, dracula } from "react-code-blocks";
 import { fontStyle } from '@material-ui/system';
 import { isClassExpression } from '@babel/types';
 
@@ -67,7 +68,7 @@ const Mathpreppro = () => {
     const para4 = `Rather than reinventing the wheel for the reamining bits to make this a fully functional webapp, I leveraged several other simple
     yet powerful services. Landing pages were created using Systeme.io. SendinBlue served as a totally free contact manager for account change queues.
     These serviced talked through Zapier, a really cool API manager. I wrote a series of cron jobs to continuously update the Django app with information
-    from all of these applications as well as to generate and send the daily emails.`
+    from all of these applications as well as to generate and send the daily emails. The code block below is the job that creates the daily eamils.`
 
     const para5 = `Let's take a look at the primary interaction with the user - the daily email. Amazon's SES was the obvious choice for an SMTP
     client with a pay-per-email model, simple API, and scalability confidence. This is a sample pro user daily eamil that shows how clean looking it is.
@@ -95,66 +96,139 @@ const Mathpreppro = () => {
     const para8 = `If you're still reading this, I hope you can appreciate the momumental effort it took to make this idea a reality with zero prior software
     experience. I went from barely knowing what object oriented programing was to deloyment in a few months.`
 
+    const code = `import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE','MathPrepPro.settings')
+import django
+django.setup()
+
+from django.core.mail import send_mail, send_mass_mail, get_connection, EmailMultiAlternatives
+from AppOne import models
+from django.contrib.auth.models import User
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.shortcuts import render
+from emails import *
+import sys
+
+admin_errors = []
+
+def send_daily_emails():
+
+    email_list = []
+    user_query = None
+
+    try:
+        user_query = User.objects.all()
+    except:
+        admin_errors.append("".join(['1, ', str(sys.exc_info()[0]), ]))
+
+    for person in user_query:
+
+        try:
+            person_userprofileinfo = models.UserProfileInfo.objects.get(user = person)
+            problem_number = person_userprofileinfo.problem_number
+            problem_query = models.Problem.objects.get(pk=problem_number)
+            to_email = person.email
+            email_title = "".join(["Daily Problem - ", str(problem_query.problem_name)])
+
+            context = {}
+            context['problem_statement'] = problem_query.problem_statement
+            url = "".join([host_base_site, "static/images/problems/", str(problem_query.pk), "_statement.png"])
+            context['problem_image_url'] = url
+            context['video_url'] = problem_query.problem_solution_url
+            context['pk'] = problem_number
+            context['pro'] = person_userprofileinfo.pro
+            if context['pro']:
+                token_obj = models.Token.objects.get(user=person)
+                token = token_obj.key
+            context['solutions_url'] = "".join([host_base_site, "prolist/", token])
+            context['pro_detail_url'] = "".join([host_base_site, "prolist/", token, "/", str(problem_number)])
+            email_list.append(generate_email('AppOne/daily_problem.html', context, email_title, [to_email]))
+        except:
+            admin_errors.append("".join(['2, ', person.email, str(sys.exc_info()[0]), ]))
+
+    try:
+        get_connection().send_messages(email_list)
+    except:
+        admin_errors.append("".join(['3, ', str(sys.exc_info()[0]), ]))
+
+def notify_admin(errors):
+    if errors:
+        context = {}
+        email_title = "Admin Errors - 5-send-daily-emails"
+        to_email = 'mathpreppro@gmail.com'
+        context['errors'] = errors
+        try:
+            error_email = []
+            error_email.append(generate_email('AppOne/admin_error.html', context, email_title, [to_email]))
+            get_connection().send_messages(error_email)
+        except:
+            pass
+
+if __name__ == '__main__':
+    send_daily_emails()
+    notify_admin(admin_errors)`
+
     return (
         <>
             <div>
-            <nav id="nav-wrap">
-                <a className="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-                <a className="mobile-btn" href="#home" title="Hide navigation">Hide navigation</a>
-                <ul id="nav" className="nav">
-                    <li><Link to='/'classname="smoothscroll" >Home</Link></li>
-                    <li className='current'><Link to='/mathpreppro'classname="smoothscroll" >MathPrepPro</Link></li>
-                    <li><Link to='/ikon'classname="smoothscroll" >Ikon</Link></li>
-                    <li><Link to='/formula1'classname="smoothscroll" >Formula1</Link></li>
-                </ul>
-            </nav>
+                <nav id="nav-wrap">
+                    <a className="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+                    <a className="mobile-btn" href="#home" title="Hide navigation">Hide navigation</a>
+                    <ul id="nav" className="nav">
+                        <li><Link to='/'classname="smoothscroll" >Home</Link></li>
+                        <li className='current'><Link to='/mathpreppro'classname="smoothscroll" >MathPrepPro</Link></li>
+                        <li><Link to='/ikon'classname="smoothscroll" >Ikon</Link></li>
+                        <li><Link to='/formula1'classname="smoothscroll" >Formula1</Link></li>
+                        <li><Link to='/ISS'classname="smoothscroll" >ISS</Link></li>
+                    </ul>
+                </nav>
             </div>
-                <Paper className={classes.main_paper} elevation={2}>
-                    <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                        <img src="images/mathpreppro/logo.png" alt="Pic Missing..." width="600" style={{margin: "auto"}}/>
-                        {/* <figcaption style={{margin: "auto"}}>Cool logo I created.</figcaption> */}
-                    </figure>
-                    <h3 style={{marginBottom: "25px"}}><a href="https://github.com/jhollier/MathPrepPro">Github for this project!</a></h3>
-                    <h2>Why MathPrepPro?</h2>
-                    <p className={classes.para_text} >{para1}</p>
-                    <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                        <img src="images/mathpreppro/pad.png" alt="Pic Missing..." width="100%" style={{margin: "auto"}}/>
-                        {/* <figcaption style={{margin: "auto"}}>Simplified project workflow.</figcaption> */}
-                    </figure>
-                    <h2>So what the heck is MathPrepPro?</h2>
-                    <p className={classes.para_text} >{para2}</p>
-                    <h2>So how did I do it?</h2>
-                    <p className={classes.para_text} >{para3}</p>
-                    <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                        <img src="images/mathpreppro/workflow.png" alt="Pic Missing..." width="100%" style={{margin: "auto"}}/>
-                        <figcaption style={{margin: "auto"}}>Simplified project workflow.</figcaption>
-                    </figure>
-                    <p className={classes.para_text} >{para4}</p>
-                    <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                        <img src="images/mathpreppro/sendinblue.png" alt="Pic Missing..." width="100%" style={{margin: "auto"}}/>
-                        <figcaption style={{margin: "auto"}}>SendinBlue contact lists.</figcaption>
-                    </figure>
-                    <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                        <img src="images/mathpreppro/cronjob.png" alt="Pic Missing..." width="80%" style={{margin: "auto"}}/>
-                        <figcaption style={{margin: "auto"}}>What kind of a portfolio would this be if I didn't show some code? This job iterates a user's daily problem number.</figcaption>
-                    </figure>
-                    <p className={classes.para_text} >{para5}</p>
-                    <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                        <img src="images/mathpreppro/email.gif" alt="Pic Missing..." width="85%" style={{margin: "auto"}}/>
-                        <figcaption style={{margin: "auto"}}>Sample daily email for a pro user.</figcaption>
-                    </figure>
-                    <h2>Unique challenge I had to solve.</h2>
-                    <p className={classes.para_text} >{para6}</p>
-                    <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column", border: "10px"}}>
-                        <img src="images/mathpreppro/addproblem.png" alt="Pic Missing..." width="85%" style={{margin: "auto"}}/>
-                        <figcaption style={{margin: "auto"}}>Problem addition admin interface.</figcaption>
-                    </figure>
-                    <h2>So is MathPrepPro up and running?</h2>
-                    <p className={classes.para_text} >{para7}</p>
-                    <p className={classes.para_text} >{para8}</p>
-                    <h6 className={classes.para_text} >Cheers,</h6>
-                    <h6 className={classes.para_text} > -Your MathPrepPro</h6>
-                </Paper>
+            <Paper className={classes.main_paper} elevation={2}>
+                <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
+                    <img src="images/mathpreppro/logo.png" alt="Pic Missing..." width="600" style={{margin: "auto"}}/>
+                    {/* <figcaption style={{margin: "auto"}}>Cool logo I created.</figcaption> */}
+                </figure>
+                <h3 style={{marginBottom: "25px"}}><a href="https://github.com/jhollier/MathPrepPro">Github for this project!</a></h3>
+                <h2>Why MathPrepPro?</h2>
+                <p className={classes.para_text} >{para1}</p>
+                <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
+                    <img src="images/mathpreppro/pad.png" alt="Pic Missing..." width="100%" style={{margin: "auto"}}/>
+                    {/* <figcaption style={{margin: "auto"}}>Simplified project workflow.</figcaption> */}
+                </figure>
+                <h2>So what the heck is MathPrepPro?</h2>
+                <p className={classes.para_text} >{para2}</p>
+                <h2>So how did I do it?</h2>
+                <p className={classes.para_text} >{para3}</p>
+                <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
+                    <img src="images/mathpreppro/workflow.png" alt="Pic Missing..." width="100%" style={{margin: "auto"}}/>
+                    <figcaption style={{margin: "auto"}}>Simplified project workflow.</figcaption>
+                </figure>
+                <p className={classes.para_text} >{para4}</p>
+                <CodeBlock
+                    text={code}
+                    language='python'
+                    showLineNumbers='false'
+                    theme={dracula}
+                />
+                <p></p>
+                <p className={classes.para_text} >{para5}</p>
+                <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
+                    <img src="images/mathpreppro/email.gif" alt="Pic Missing..." width="85%" style={{margin: "auto"}}/>
+                    <figcaption style={{margin: "auto"}}>Sample daily email for a pro user.</figcaption>
+                </figure>
+                <h2>Unique challenge I had to solve.</h2>
+                <p className={classes.para_text} >{para6}</p>
+                <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column", border: "10px"}}>
+                    <img src="images/mathpreppro/addproblem.png" alt="Pic Missing..." width="85%" style={{margin: "auto"}}/>
+                    <figcaption style={{margin: "auto"}}>Problem addition admin interface.</figcaption>
+                </figure>
+                <h2>So is MathPrepPro up and running?</h2>
+                <p className={classes.para_text} >{para7}</p>
+                <p className={classes.para_text} >{para8}</p>
+                <h6 className={classes.para_text} >Cheers,</h6>
+                <h6 className={classes.para_text} > -Your MathPrepPro</h6>
+            </Paper>
             <Footer />
         </>
     )

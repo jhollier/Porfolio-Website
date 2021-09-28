@@ -10,6 +10,7 @@ import Portfolio from './Components/Portfolio';
 import Mathpreppro from './Components/Mathpreppro';
 import Ikon from './Components/Ikon';
 import Formula1 from './Components/Formula1';
+import ISS from './Components/ISS';
 import Scroll from './Components/Scroll';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -66,6 +67,9 @@ class App extends Component {
               </Route>
               <Route path='/formula1' >
                 <Formula1 />
+              </Route>
+              <Route path='/ISS' >
+                <ISS />
               </Route>
           </Switch>
         {/* </ScrollToTop> */}
