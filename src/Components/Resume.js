@@ -35,6 +35,9 @@ class Resume extends Component {
       var skillslist = this.props.data.skills.map(function(skills){
         return <p className="skill">&bull; {skills.name}</p>
       })
+      var onlineclasses = this.props.data.onlineclasses.map(function(onlineclass){
+        return <p className="info">{onlineclass.name}<span>&bull;</span><em className="date">{onlineclass.date}</em></p>
+      })
     }
 
     return (
@@ -52,11 +55,12 @@ class Resume extends Component {
          <div className="three columns header-col">
             <h1><span>Education</span></h1>
          </div>
-
          <div className="nine columns main-col">
             <div className="row item">
                <div className="twelve columns">
                  {education}
+                 <h3>Udemy</h3>
+                 {onlineclasses}
                </div>
             </div>
          </div>

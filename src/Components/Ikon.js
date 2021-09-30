@@ -10,11 +10,11 @@ import { isClassExpression } from '@babel/types';
 const useStyles = makeStyles(theme => ({
     main_paper: {
         marginTop: '7%',
-        marginLeft: '10%',
-        marginRight: '10%',
+        marginLeft: '7%',
+        marginRight: '7%',
         marginBottom: '5%',
-        paddingLeft: '15%',
-        paddingRight: '15%',
+        paddingLeft: '5%',
+        paddingRight: '5%',
         paddingTop: '5%',
         paddingBottom: '5%'
     },
@@ -159,14 +159,14 @@ print("Booked! You're ready to shred on " + DATE + "!")`
             </div>
             <Paper className={classes.main_paper} elevation={2}>
                 <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                    <img src="images/ikon/ikon.png" alt="Pic Missing..." width="500" style={{margin: "auto"}}/>
+                    <img src="images/ikon/ikon.png" alt="Pic Missing..." width="300px" style={{margin: "auto"}}/>
                     {/* <figcaption style={{margin: "auto"}}>Cool logo I created.</figcaption> */}
                 </figure>
                 <h3 style={{marginBottom: "25px"}}><a href="https://github.com/jhollier/Ikon-Selector">Github for this project!</a></h3>
                 <h2>What about the Ikon pass?</h2>
                 <p className={classes.para_text} >{para1}</p>
                 <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                    <img src="images/ikon/theboyz.png" alt="Pic Missing..." width="600" style={{margin: "auto"}}/>
+                    <img src="images/ikon/theboyz.png" alt="Pic Missing..." width="600px" style={{margin: "auto"}}/>
                     <figcaption style={{margin: "auto"}}>Crystal Mountain with the fellas.</figcaption>
                 </figure>
                 <h2>So...how did I get around this?</h2>

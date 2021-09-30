@@ -3,7 +3,7 @@
     "name": "Joe Hollier",
     "description": "This is my React software portfolio where I not only show you some of the projects I've create but also some things I am interested in.",
     "image": "profilepic.jpg",
-    "bio": "After several years of physically building anything from racecars to rocket engines, I became obsessed with building using software technologies – I have the global pandemic lockdown to thank for this. I enjoyed building personal software projects so much that I pivoted my career towards using those same technologies to adress deviciencies at my current job.",
+    "bio": "After several years of physically building anything from racecars to rocket engines, I became obsessed with building using software technologies – I have the global pandemic lockdown to thank for this. I enjoyed building personal software projects so much that I pivoted my career towards using those same technologies to adress deficiencies at my current job.",
     "contactmessage": "Here is where you should write your message to readers to have them get in contact with you.",
     "email": "jbhollier20@gmail.com",
     "phone": "318-787-8785",
@@ -43,6 +43,20 @@
         "websitetext": "here!"
       }
     ],
+    "onlineclasses": [
+      {
+        "name": "Complete Python 3 Bootcamp",
+        "date": "Fall 2020"
+      },
+      {
+        "name": "Python and Django Full Stack Web Developer Bootcamp",
+        "date": "Fall 2020"
+      },
+      {
+        "name": "Python for Data Science and Machine Learning",
+        "date": "Spring 2021"
+      }
+    ],
     "work": [
       {
         "company": "Blue Origin",
@@ -66,7 +80,7 @@
         "description": "Developed mechanical systems for the area denial Supervised Smart Munition DoD initiative."
       }
     ],
-    "skillmessage": "Notable software technology skills.",
+    "skillmessage": "Software technology skills.",
     "skills": [
       {
         "name": "Python"

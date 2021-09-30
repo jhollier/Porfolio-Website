@@ -10,11 +10,11 @@ import { isClassExpression } from '@babel/types';
 const useStyles = makeStyles(theme => ({
     main_paper: {
         marginTop: '7%',
-        marginLeft: '10%',
-        marginRight: '10%',
+        marginLeft: '7%',
+        marginRight: '7%',
         marginBottom: '5%',
-        paddingLeft: '15%',
-        paddingRight: '15%',
+        paddingLeft: '5%',
+        paddingRight: '5%',
         paddingTop: '5%',
         paddingBottom: '5%'
     },
@@ -186,22 +186,22 @@ if __name__ == '__main__':
             </div>
             <Paper className={classes.main_paper} elevation={2}>
                 <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                    <img src="images/mathpreppro/logo.png" alt="Pic Missing..." width="600" style={{margin: "auto"}}/>
+                    <img src="images/mathpreppro/logo.png" alt="Pic Missing..." width="500px" style={{margin: "auto"}}/>
                     {/* <figcaption style={{margin: "auto"}}>Cool logo I created.</figcaption> */}
                 </figure>
                 <h3 style={{marginBottom: "25px"}}><a href="https://github.com/jhollier/MathPrepPro">Github for this project!</a></h3>
                 <h2>Why MathPrepPro?</h2>
                 <p className={classes.para_text} >{para1}</p>
                 <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                    <img src="images/mathpreppro/pad.png" alt="Pic Missing..." width="100%" style={{margin: "auto"}}/>
-                    {/* <figcaption style={{margin: "auto"}}>Simplified project workflow.</figcaption> */}
+                    <img src="images/mathpreppro/pad.png" alt="Pic Missing..." width="800px" style={{margin: "auto"}}/>
+                    <figcaption style={{margin: "auto"}}>Sales funnel banner.</figcaption>
                 </figure>
                 <h2>So what the heck is MathPrepPro?</h2>
                 <p className={classes.para_text} >{para2}</p>
                 <h2>So how did I do it?</h2>
                 <p className={classes.para_text} >{para3}</p>
                 <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                    <img src="images/mathpreppro/workflow.png" alt="Pic Missing..." width="100%" style={{margin: "auto"}}/>
+                    <img src="images/mathpreppro/workflow.png" alt="Pic Missing..." width="800px" style={{margin: "auto"}}/>
                     <figcaption style={{margin: "auto"}}>Simplified project workflow.</figcaption>
                 </figure>
                 <p className={classes.para_text} >{para4}</p>
@@ -214,13 +214,13 @@ if __name__ == '__main__':
                 <p></p>
                 <p className={classes.para_text} >{para5}</p>
                 <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
-                    <img src="images/mathpreppro/email.gif" alt="Pic Missing..." width="85%" style={{margin: "auto"}}/>
+                    <img src="images/mathpreppro/email.gif" alt="Pic Missing..." width="600px" style={{margin: "auto"}}/>
                     <figcaption style={{margin: "auto"}}>Sample daily email for a pro user.</figcaption>
                 </figure>
                 <h2>Unique challenge I had to solve.</h2>
                 <p className={classes.para_text} >{para6}</p>
                 <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column", border: "10px"}}>
-                    <img src="images/mathpreppro/addproblem.png" alt="Pic Missing..." width="85%" style={{margin: "auto"}}/>
+                    <img src="images/mathpreppro/addproblem.png" alt="Pic Missing..." width="600px" style={{margin: "auto"}}/>
                     <figcaption style={{margin: "auto"}}>Problem addition admin interface.</figcaption>
                 </figure>
                 <h2>So is MathPrepPro up and running?</h2>
