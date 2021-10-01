@@ -1,9 +1,9 @@
 {
   "main": {
     "name": "Joe Hollier",
-    "description": "This is my React software portfolio where I not only show you some of the projects I've create but also some things I am interested in.",
+    "description": "This is my React portfolio where I not only show you some of the software projects I've create but also some things I am interested in.",
     "image": "profilepic.jpg",
-    "bio": "After several years of physically building anything from racecars to rocket engines, I became obsessed with building using software technologies – I have the global pandemic lockdown to thank for this. I enjoyed building personal software projects so much that I pivoted my career towards using those same technologies to adress deficiencies at my current job.",
+    "bio": "After several years of physically building anything from racecars to rocket engines, I became obsessed with building using software technologies – I have the global pandemic lockdown to thank for this. I enjoyed building personal software projects so much that I expanded my career towards using those same technologies to adress deficiencies and automate out laborious tasks at my current job.",
     "contactmessage": "Here is where you should write your message to readers to have them get in contact with you.",
     "email": "jbhollier20@gmail.com",
     "phone": "318-787-8785",
@@ -62,7 +62,7 @@
         "company": "Blue Origin",
         "title": "Software Development Engineer",
         "years": "July 2021 - Present",
-        "description": "Scripted a post test data pipline using Python, Pandas, and NumPy to store reduced trending data. Developed a React front end for easily viewing and exporting this trended data.",
+        "description": "Scripted a post test data pipline using Python, Pandas, and NumPy to store reduced trending data. Developed a React front end for easily viewing and exporting this trended data. Connected the front end to the trending database using a Flask API.",
         "title2": "Propulsion Development Engineer",
         "years2": "Sept 2017 - Present",
         "description2": "I've been a developer for Blue's family of liquid oxygen / liquid hydrogen rocket engines. This includes full life-cycle deisgn of structural hardware, overall engine and test article layouts, material property development, and configuration managment."
@@ -80,7 +80,7 @@
         "description": "Developed mechanical systems for the area denial Supervised Smart Munition DoD initiative."
       }
     ],
-    "skillmessage": "Software technology skills.",
+    "skillmessage": "Software technologies",
     "skills": [
       {
         "name": "Python"
@@ -92,7 +92,7 @@
         "name": "HTML / CSS"
       },
       {
-        "name": "Django"
+        "name": "Django / Flask"
       },
       {
         "name": "JavaScript"
@@ -105,6 +105,9 @@
       },
       {
         "name": "AWS SES"
+      },
+      {
+        "name": "VBA"
       }
     ]
   },
@@ -123,13 +126,13 @@
         "url": "/ikon"
       },
       {
-        "title": "Formula 1 Exploration",
+        "title": "COMING SOON! - Formula 1 Exploration",
         "category": "An exploratory data science project to answer to interesting questions regarding Formula 1 racing data.",
         "image": "f1.png",
         "url": "/formula1"
       },
       {
-        "title": "ISS Viewing Angles",
+        "title": "COMING SOON! - ISS Viewing Angles",
         "category": "A cool tool that will give you current viewing angles to the ISS at your current location.",
         "image": "ISS.jpg",
         "url": "/ISS"

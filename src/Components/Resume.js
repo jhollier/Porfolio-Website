@@ -76,12 +76,6 @@ class Resume extends Component {
 
             <h3>{skillmessage}</h3>
             {skillslist}
-
-				{/* <div className="bars">
-				   <ul className="skills">
-					  {skills}
-					</ul>
-				</div> */}
         
 			</div>
       </div>

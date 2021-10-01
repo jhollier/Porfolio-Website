@@ -4,8 +4,6 @@ import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Footer from './Footer';
 import { CodeBlock, dracula } from "react-code-blocks";
-import { fontStyle } from '@material-ui/system';
-import { isClassExpression } from '@babel/types';
 
 const useStyles = makeStyles(theme => ({
     main_paper: {
@@ -43,22 +41,22 @@ const Ikon = () => {
     const classes = useStyles();
 
     const para1 = `As the 2020-2021 ski season started to roll around, it was clear that the global pandemic was not going away and the ski industry was going to be
-    affected. Like many other mountains on the Ikon pass system, my Seatle home mountain opted in for a ticket reservation system. Unsurprisingly thought, all of the
+    affected. Like many other mountains on the Ikon pass system, my Seattle home mountain opted in for a ticket reservation system. Unsurprisingly thought, all of the
     weekend reservations were immediately snatched up by those with good internet speeds and a little bit of luck as soon as the system launched. To claim a spot,
     you had to frustratingly refresh the reservation page and re-fill out the form to even see if there was a spot that someone had dropped. Sometimes
     this could take hours to get one of those coveted weekend days when the forcast was looking "rad". This went on for several weeks..`
 
-    const para2 = `I first want to start by saying that I did not exploit anything. I just wanted to get reservations without actually having to be present.
+    const para2 = `I first want to start by saying that I did not exploit anything. I just wanted to get reservations without actually having to be present at my computer.
     Is that too much to ask?!`
 
-    const para3 = `I needed tool to be able to go through all the user input motions for logging in to the Ikon website, fill out the reservation form, and check
+    const para3 = `I needed tool to be able to go through all the user input motions for logging in to the Ikon website, filling out the reservation form, and checking
     for avaliability. If no reservation was avaliable, it would need to refresh and try again. If there was a reservation avaliable, it would need to book that
     bad boy. If you read the write-up on my MathPrepPro Webapp then you know I already used a webdriver to automate out some tasks. Just having learned about
-    how to use these at the time, they were a perfect tool for the job. Beause I primarily use Chrome, the Selenium webdriver was used.`
+    how to use one at the time, it were a perfect tool for the job. Beause I primarily use Chrome, the Selenium webdriver was used.`
 
     const para4 = `I little inpsection of the Ikon website HTML code gave me all of the element data I needed to hardcode in the clicks and user input fields.
     Some experimenting with the website server response / load times led me to build in just enough buffer time to make sure everything rendered before web
-    driving. Check out the raw code below.`
+    driving. I even created an executable file so I could quickly launch the tool when needed. Check out the raw code below.`
 
     const para5 = `This is probably my favorite piece of software that I have written so far. It saved me more time throughout the 20-21 ski season than what
     it took to develop by almost an order of magnitude! Many times I was able to start the script and run some errnds knowing I'd likely come back to
@@ -73,7 +71,7 @@ import time
 options = Options()
 options.headless = True
 
-WELCOME_MESSAGE = """Welcome to the Ikon Reservation Assistance Tool v1.1!"""
+WELCOME_MESSAGE = "Welcome to the Ikon Reservation Assistance Tool v1.1!"
 print(WELCOME_MESSAGE)
 
 # You can hardcore your credientials here rather than use the user prompts
@@ -160,14 +158,13 @@ print("Booked! You're ready to shred on " + DATE + "!")`
             <Paper className={classes.main_paper} elevation={2}>
                 <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
                     <img src="images/ikon/ikon.png" alt="Pic Missing..." width="300px" style={{margin: "auto"}}/>
-                    {/* <figcaption style={{margin: "auto"}}>Cool logo I created.</figcaption> */}
                 </figure>
                 <h3 style={{marginBottom: "25px"}}><a href="https://github.com/jhollier/Ikon-Selector">Github for this project!</a></h3>
                 <h2>What about the Ikon pass?</h2>
                 <p className={classes.para_text} >{para1}</p>
                 <figure style={{padding: '30px', margin: "auto", display: "flex", flexFlow: "column"}}>
                     <img src="images/ikon/theboyz.png" alt="Pic Missing..." width="600px" style={{margin: "auto"}}/>
-                    <figcaption style={{margin: "auto"}}>Crystal Mountain with the fellas.</figcaption>
+                    <figcaption style={{margin: "auto"}}>Hittin' the glades.</figcaption>
                 </figure>
                 <h2>So...how did I get around this?</h2>
                 <p className={classes.para_text} >{para2}</p>

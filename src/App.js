@@ -47,15 +47,14 @@ class App extends Component {
   render() {
     return (
       <Router>
-        {/* <ScrollToTop> */}
         <Scroll />
           <Switch>
               <Route exact path='/'>
                 <div className="App">
                   <Header data={this.state.resumeData.main}/>
                   <About data={this.state.resumeData.main}/>
-                  <Resume data={this.state.resumeData.resume}/>
                   <Portfolio data={this.state.resumeData.portfolio}/>
+                  <Resume data={this.state.resumeData.resume}/>
                   <Footer data={this.state.resumeData.main}/>
                 </div>
               </Route>
@@ -72,7 +71,6 @@ class App extends Component {
                 <ISS />
               </Route>
           </Switch>
-        {/* </ScrollToTop> */}
       </Router>
     );
   }
